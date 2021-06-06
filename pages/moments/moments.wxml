@@ -1,0 +1,34 @@
+<!--pages/moments/moments.wxml-->
+<view>
+  <image src="{{work.url}}">
+  </image>
+  <view class="user_info">
+    <image src="{{author_avatar_url}}" class="avatar"></image>
+    <view class="word">
+      <text>{{work.nick_name}}</text>
+      <text class="word_small">{{work.photographer}}</text>
+    </view>
+  </view>
+
+  <view>
+    <view class="subject">
+      <text>{{work.subject}}</text>
+    </view>
+  </view>
+
+  <view class="comment">
+    <text>评论</text>
+    <view class="divLine"></view>
+    <view wx:for="{{comments}}" wx:for-item="item">
+      <view wx:if="{{item.comment}}">
+        <view class="comment_info">
+          <image class="comment_user_avatar" src="{{item.avatar_url}}"></image>
+          <view class="comment_user">
+            <text>{{item.open_id}}</text>
+            <text class="comment_content">{{item.comment}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

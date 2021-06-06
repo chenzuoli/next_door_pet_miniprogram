@@ -1,0 +1,80 @@
+/* pages/moments/moments.wxss */
+
+.user_info {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px
+}
+
+.avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.word {
+  width: 90px;
+  margin-left: 10px;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.word_small {
+  font-size: 27rpx;
+  word-break: break-all;
+  color: #7a7878
+}
+
+.subject {
+  width: 80%;
+  margin: 30px;
+  margin-top: 15x;
+  font-size: 27rpx;
+  word-break: break-all
+}
+
+.comment {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*分割线样式*/
+.divLine {
+  background: #E0E3DA;
+  width: 100%;
+  margin-top: 5px;
+  height: 3rpx;
+}
+
+.comment_info {
+  font-size: 27rpx;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px
+}
+
+.comment_user_avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.comment_user {
+  width: 80%;
+  margin-left: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  color: #7a7878
+}
+
+.comment_content {
+  font-size: 27rpx;
+  word-break: break-all;
+  color: #0a0a0a
+}

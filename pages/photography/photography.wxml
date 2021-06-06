@@ -1,0 +1,23 @@
+<!--pages/photography/photography.wxml-->
+<block wx:for="{{work}}" wx:for-item="data">
+  <view bindtap="dataInfo" data-work="{{data}}">
+    <!-- 作品 -->
+    <image src="{{data.url}}"></image>
+
+    <!-- 用户信息 -->
+    <view class="user_info">
+      <image src="{{data.url}}" class="avatar"></image>
+      <view class="word">
+        <text>{{data.nick_name}}</text>
+        <text class="word_small">{{data.photographer}}</text>
+      </view>
+    </view>
+
+    <!-- 作品主题 -->
+    <view>
+      <view class="subject">
+        <text>{{data.subject}}</text>
+      </view>
+    </view>
+  </view>
+</block>
