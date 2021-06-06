@@ -78,3 +78,11 @@
   word-break: break-all;
   color: #0a0a0a
 }
+
+.empty_comment {
+  font-size: 27rpx;
+  word-break: break-all;
+  color: #7a7878;
+  text-align: center;
+  margin-top: 10px;
+}

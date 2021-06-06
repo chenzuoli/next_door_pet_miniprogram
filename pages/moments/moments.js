@@ -79,14 +79,11 @@ Page({
       userUtil.getUserInfo(comment.open_id).then((res) => {
         console.log(res.avatar_url)
         comment.avatar_url = res.avatar_url
-        this.setData({})
+        this.setData({
+          comments: comments
+        })
       })
     });
-    // 等待加载评论者头像
-    console.log(comments.length)
-    this.setData({
-      comments: comments
-    })
   },
 
   /**
