@@ -27,7 +27,6 @@ Page({
     })
 
     var work = JSON.parse(options.work)
-    console.log(work)
     this.getPhotography(work.id)
     this.getAuthorAvatar(work.open_id)
     this.getComments(work.id)
@@ -77,7 +76,6 @@ Page({
   getCommenterAvatar(comments) {
     comments.forEach(comment => {
       userUtil.getUserInfo(comment.open_id).then((res) => {
-        console.log(res.avatar_url)
         comment.avatar_url = res.avatar_url
         this.setData({
           comments: comments

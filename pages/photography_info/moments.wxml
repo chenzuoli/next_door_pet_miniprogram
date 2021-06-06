@@ -1,7 +1,8 @@
 <!--pages/moments/moments.wxml-->
 <view>
-  <image src="{{work.url}}">
-  </image>
+  <view class="img">
+    <image mode="widthFix" style="width:100%" src="{{work.url}}"></image>
+  </view>
   <view class="user_info">
     <image src="{{author_avatar_url}}" class="avatar"></image>
     <view class="word">

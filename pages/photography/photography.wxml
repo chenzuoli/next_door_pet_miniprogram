@@ -1,8 +1,11 @@
 <!--pages/photography/photography.wxml-->
+
 <block wx:for="{{work}}" wx:for-item="data">
   <view bindtap="dataInfo" data-work="{{data}}">
     <!-- 作品 -->
-    <image src="{{data.url}}"></image>
+    <view class="img">
+      <image mode="widthFix" style="width:100%" src="{{data.url}}"></image>
+    </view>
 
     <!-- 用户信息 -->
     <view class="user_info">
@@ -14,10 +17,8 @@
     </view>
 
     <!-- 作品主题 -->
-    <view>
-      <view class="subject">
-        <text>{{data.subject}}</text>
-      </view>
+    <view class="subject">
+      <text>{{data.subject}}</text>
     </view>
   </view>
 </block>

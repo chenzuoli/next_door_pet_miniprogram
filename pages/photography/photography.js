@@ -46,7 +46,6 @@ Page({
   },
 
   getAuthorAvatars(work) {
-    console.log(work)
     work.forEach(element => {
       userUtil.getUserInfo(element.open_id).then((res) => {
         element.avatar_url = res.avatar_url
