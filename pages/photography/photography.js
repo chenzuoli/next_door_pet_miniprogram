@@ -1,6 +1,6 @@
 // pages/photography/photography.js
 
-var api = require('../../api/api')
+var userUtil = require('../../utils/userUtil')
 var get_photographies_url = 'https://pipilong.pet:7449/photography/get_photographies'
 
 Page({
@@ -28,7 +28,6 @@ Page({
 
   // 获取摄影作品列表
   getPhotographies() {
-    var that = this
     return new Promise((resolve, reject) => {
       wx.request({
         url: get_photographies_url,
@@ -36,9 +35,7 @@ Page({
         dataType: 'json',
         responseType: 'text',
         success: (result) => {
-          that.setData({
-            work: result.data.data
-          })
+          this.getAuthorAvatars(result.data.data)
           resolve(result)
         },
         fail: (err) => {
@@ -47,10 +44,23 @@ Page({
       })
     })
   },
+
+  getAuthorAvatars(work) {
+    console.log(work)
+    work.forEach(element => {
+      userUtil.getUserInfo(element.open_id).then((res) => {
+        element.avatar_url = res.avatar_url
+        this.setData({
+          work: work
+        })
+      })
+    })
+  },
+
   dataInfo(data) {
     var work = JSON.stringify(data.currentTarget.dataset.work)
     wx.navigateTo({
-      url: '../moments/moments?work=' + work,
+      url: '../photography_info/moments?work=' + work,
     })
   },
 

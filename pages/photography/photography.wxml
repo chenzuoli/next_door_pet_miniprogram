@@ -6,7 +6,7 @@
 
     <!-- 用户信息 -->
     <view class="user_info">
-      <image src="{{data.url}}" class="avatar"></image>
+      <image src="{{data.avatar_url}}" class="avatar"></image>
       <view class="word">
         <text>{{data.nick_name}}</text>
         <text class="word_small">{{data.photographer}}</text>
