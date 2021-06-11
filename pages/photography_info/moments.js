@@ -13,7 +13,8 @@ Page({
   data: {
     work: '',
     author_avatar_url: '',
-    comments: []
+    comments: [],
+    realComments: []
   },
 
   /**
@@ -74,6 +75,7 @@ Page({
   },
 
   getCommenterAvatar(comments) {
+    var realComments = []
     comments.forEach(comment => {
       userUtil.getUserInfo(comment.open_id).then((res) => {
         comment.avatar_url = res.avatar_url
@@ -81,8 +83,15 @@ Page({
           comments: comments
         })
       })
+      if (comment.comment) {
+        realComments.push(comment)
+      }
     });
+    this.setData({
+      realComments: realComments
+    })
   },
+
 
   /**
    * Lifecycle function--Called when page is initially rendered

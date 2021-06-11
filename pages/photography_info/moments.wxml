@@ -31,7 +31,7 @@
         </view>
       </view>
     </view>
-    <view class="empty_comment" wx:if="{{comments.length == 0}}">
+    <view class="empty_comment" wx:if="{{realComments.length == 0}}">
       <text>暂时还没有人评论呢...</text>
     </view>
   </view>
